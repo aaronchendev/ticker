@@ -8,16 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		A71F04371D3A0292007C5627 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71F04361D3A0292007C5627 /* AppDelegate.swift */; };
-		A71F04391D3A0292007C5627 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71F04381D3A0292007C5627 /* ViewController.swift */; };
-		A71F043C1D3A0292007C5627 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A71F043A1D3A0292007C5627 /* Main.storyboard */; };
 		A71F043E1D3A0292007C5627 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A71F043D1D3A0292007C5627 /* Assets.xcassets */; };
 		A71F04411D3A0292007C5627 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A71F043F1D3A0292007C5627 /* LaunchScreen.storyboard */; };
 		A71F044C1D3A0292007C5627 /* tickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71F044B1D3A0292007C5627 /* tickerTests.swift */; };
 		A71F04571D3A0292007C5627 /* tickerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71F04561D3A0292007C5627 /* tickerUITests.swift */; };
-		A71F04651D3A0497007C5627 /* ContainerPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71F04641D3A0497007C5627 /* ContainerPageViewController.swift */; };
-		A71F04671D3A04C3007C5627 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71F04661D3A04C3007C5627 /* TasksViewController.swift */; };
-		A71F046A1D3A04D3007C5627 /* TickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71F04681D3A04D3007C5627 /* TickerViewController.swift */; };
-		A71F046B1D3A04D3007C5627 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71F04691D3A04D3007C5627 /* SettingsViewController.swift */; };
+		A773B7DF1D3AF7790080B5A0 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A773B7D71D3AF7790080B5A0 /* TaskViewController.swift */; };
+		A773B7E01D3AF7790080B5A0 /* Task.xib in Resources */ = {isa = PBXBuildFile; fileRef = A773B7D81D3AF7790080B5A0 /* Task.xib */; };
+		A773B7E11D3AF7790080B5A0 /* TickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A773B7D91D3AF7790080B5A0 /* TickerViewController.swift */; };
+		A773B7E21D3AF7790080B5A0 /* Ticker.xib in Resources */ = {isa = PBXBuildFile; fileRef = A773B7DA1D3AF7790080B5A0 /* Ticker.xib */; };
+		A773B7E31D3AF7790080B5A0 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A773B7DB1D3AF7790080B5A0 /* SettingViewController.swift */; };
+		A773B7E41D3AF7790080B5A0 /* Setting.xib in Resources */ = {isa = PBXBuildFile; fileRef = A773B7DC1D3AF7790080B5A0 /* Setting.xib */; };
+		A773B7E81D3AF7A40080B5A0 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A773B7E71D3AF7A40080B5A0 /* ContainerViewController.swift */; };
+		A773B7EA1D3AF7F30080B5A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A773B7E91D3AF7F30080B5A0 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,8 +42,6 @@
 /* Begin PBXFileReference section */
 		A71F04331D3A0292007C5627 /* ticker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ticker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A71F04361D3A0292007C5627 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A71F04381D3A0292007C5627 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A71F043B1D3A0292007C5627 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A71F043D1D3A0292007C5627 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A71F04401D3A0292007C5627 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A71F04421D3A0292007C5627 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -51,10 +51,14 @@
 		A71F04521D3A0292007C5627 /* tickerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tickerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A71F04561D3A0292007C5627 /* tickerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tickerUITests.swift; sourceTree = "<group>"; };
 		A71F04581D3A0292007C5627 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A71F04641D3A0497007C5627 /* ContainerPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerPageViewController.swift; sourceTree = "<group>"; };
-		A71F04661D3A04C3007C5627 /* TasksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
-		A71F04681D3A04D3007C5627 /* TickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickerViewController.swift; sourceTree = "<group>"; };
-		A71F04691D3A04D3007C5627 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		A773B7D71D3AF7790080B5A0 /* TaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
+		A773B7D81D3AF7790080B5A0 /* Task.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Task.xib; sourceTree = "<group>"; };
+		A773B7D91D3AF7790080B5A0 /* TickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickerViewController.swift; sourceTree = "<group>"; };
+		A773B7DA1D3AF7790080B5A0 /* Ticker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Ticker.xib; sourceTree = "<group>"; };
+		A773B7DB1D3AF7790080B5A0 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		A773B7DC1D3AF7790080B5A0 /* Setting.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Setting.xib; sourceTree = "<group>"; };
+		A773B7E71D3AF7A40080B5A0 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		A773B7E91D3AF7F30080B5A0 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,16 +109,12 @@
 		A71F04351D3A0292007C5627 /* ticker */ = {
 			isa = PBXGroup;
 			children = (
-				A71F04361D3A0292007C5627 /* AppDelegate.swift */,
-				A71F04381D3A0292007C5627 /* ViewController.swift */,
-				A71F043A1D3A0292007C5627 /* Main.storyboard */,
-				A71F04641D3A0497007C5627 /* ContainerPageViewController.swift */,
-				A71F04661D3A04C3007C5627 /* TasksViewController.swift */,
-				A71F04681D3A04D3007C5627 /* TickerViewController.swift */,
-				A71F04691D3A04D3007C5627 /* SettingsViewController.swift */,
-				A71F043D1D3A0292007C5627 /* Assets.xcassets */,
-				A71F043F1D3A0292007C5627 /* LaunchScreen.storyboard */,
-				A71F04421D3A0292007C5627 /* Info.plist */,
+				A773B7E71D3AF7A40080B5A0 /* ContainerViewController.swift */,
+				A773B7D71D3AF7790080B5A0 /* TaskViewController.swift */,
+				A773B7D91D3AF7790080B5A0 /* TickerViewController.swift */,
+				A773B7DB1D3AF7790080B5A0 /* SettingViewController.swift */,
+				A773B7EB1D3AFA3F0080B5A0 /* UI files */,
+				A773B7EC1D3AFA630080B5A0 /* extras */,
 			);
 			path = ticker;
 			sourceTree = "<group>";
@@ -135,6 +135,28 @@
 				A71F04581D3A0292007C5627 /* Info.plist */,
 			);
 			path = tickerUITests;
+			sourceTree = "<group>";
+		};
+		A773B7EB1D3AFA3F0080B5A0 /* UI files */ = {
+			isa = PBXGroup;
+			children = (
+				A773B7E91D3AF7F30080B5A0 /* Main.storyboard */,
+				A773B7D81D3AF7790080B5A0 /* Task.xib */,
+				A773B7DA1D3AF7790080B5A0 /* Ticker.xib */,
+				A773B7DC1D3AF7790080B5A0 /* Setting.xib */,
+				A71F043F1D3A0292007C5627 /* LaunchScreen.storyboard */,
+			);
+			name = "UI files";
+			sourceTree = "<group>";
+		};
+		A773B7EC1D3AFA630080B5A0 /* extras */ = {
+			isa = PBXGroup;
+			children = (
+				A71F04361D3A0292007C5627 /* AppDelegate.swift */,
+				A71F043D1D3A0292007C5627 /* Assets.xcassets */,
+				A71F04421D3A0292007C5627 /* Info.plist */,
+			);
+			name = extras;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,8 +265,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A71F04411D3A0292007C5627 /* LaunchScreen.storyboard in Resources */,
+				A773B7E21D3AF7790080B5A0 /* Ticker.xib in Resources */,
 				A71F043E1D3A0292007C5627 /* Assets.xcassets in Resources */,
-				A71F043C1D3A0292007C5627 /* Main.storyboard in Resources */,
+				A773B7EA1D3AF7F30080B5A0 /* Main.storyboard in Resources */,
+				A773B7E41D3AF7790080B5A0 /* Setting.xib in Resources */,
+				A773B7E01D3AF7790080B5A0 /* Task.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,12 +294,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A71F04671D3A04C3007C5627 /* TasksViewController.swift in Sources */,
-				A71F04391D3A0292007C5627 /* ViewController.swift in Sources */,
-				A71F04651D3A0497007C5627 /* ContainerPageViewController.swift in Sources */,
-				A71F046A1D3A04D3007C5627 /* TickerViewController.swift in Sources */,
-				A71F046B1D3A04D3007C5627 /* SettingsViewController.swift in Sources */,
+				A773B7E81D3AF7A40080B5A0 /* ContainerViewController.swift in Sources */,
+				A773B7E11D3AF7790080B5A0 /* TickerViewController.swift in Sources */,
+				A773B7E31D3AF7790080B5A0 /* SettingViewController.swift in Sources */,
 				A71F04371D3A0292007C5627 /* AppDelegate.swift in Sources */,
+				A773B7DF1D3AF7790080B5A0 /* TaskViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,14 +334,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		A71F043A1D3A0292007C5627 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A71F043B1D3A0292007C5627 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A71F043F1D3A0292007C5627 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -505,6 +521,7 @@
 				A71F045D1D3A0292007C5627 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A71F045E1D3A0292007C5627 /* Build configuration list for PBXNativeTarget "tickerTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +530,7 @@
 				A71F04601D3A0292007C5627 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A71F04611D3A0292007C5627 /* Build configuration list for PBXNativeTarget "tickerUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +539,7 @@
 				A71F04631D3A0292007C5627 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
