@@ -9,27 +9,43 @@
 import UIKit
 
 class TickerViewController: UIViewController {
+    
+    @IBOutlet weak var button: UIView!
+    
+    @IBOutlet weak var tickerView: TickerView!
+    
+    @IBOutlet weak var pauseButton: UIButton!
+    
+    @IBOutlet weak var nextButton: UIButton!
+    
+    var twData = TickerWheelData()
 
+    
+    @IBAction func didReceivePanGesture(sender: UIPanGestureRecognizer) {
+        
+        let touches = sender.locationInView(nil);
+        
+        if sender.state == UIGestureRecognizerState.Began
+        {
+            twData.updateState(touches, angle: tickerView.angle, center: tickerView.center)
+        }
+        else if (sender.state == UIGestureRecognizerState.Changed)
+        {
+            tickerView.angle = twData.getAngle(touches)
+        }
+    }
+    
+    // MARK: View Controller Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

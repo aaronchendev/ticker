@@ -48,6 +48,8 @@ class ContainerViewController: UIViewController
         vc2.didMoveToParentViewController(self)
         
         scrollView.contentSize = CGSizeMake(view.frame.size.width * 3, view.frame.size.height);
+        
+        scrollView.scrollRectToVisible(frame1, animated: false)
     }
     
 
