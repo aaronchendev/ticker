@@ -19,10 +19,12 @@ class ContainerViewController: UIViewController
         setupVCs()
     }
     
+    
+    static var twData = TickerWheelData()
     func setupVCs() {
         
         let vc0 = TaskViewController(nibName: "Task", bundle: nil)
-        
+    
         addChildViewController(vc0)
         scrollView.addSubview(vc0.view)
         vc0.didMoveToParentViewController(self)

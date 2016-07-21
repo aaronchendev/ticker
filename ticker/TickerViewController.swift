@@ -14,12 +14,30 @@ class TickerViewController: UIViewController {
     
     @IBOutlet weak var tickerView: TickerView!
     
-    @IBOutlet weak var pauseButton: UIButton!
+    @IBOutlet weak var pauseFlashImageView: UIImageView!
     
-    @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var pauseSymbolImageView: UIImageView!
+    @IBAction func pauseButtonPressed(sender: UIButton) {
+        if twData.timing {
+            if twData.pauseTimer() {
+                UIView.animateWithDuration(0.5, animations: {
+                    self.pauseFlashImageView.alpha = 0.5
+                    self.pauseSymbolImageView.alpha = 0.7
+                })
+            } else {
+                UIView.animateWithDuration(0.5, animations: {
+                    self.pauseFlashImageView.alpha = 0
+                    self.pauseSymbolImageView.alpha = 0
+                })
+            }
+        }
+    }
+    @IBAction func nextTaskButonPressed(sender: UIButton) {
+    }
     
-    var twData = TickerWheelData()
+    var twData = ContainerViewController.twData
 
+    @IBOutlet weak var timeLabel: UILabel!
     
     @IBAction func didReceivePanGesture(sender: UIPanGestureRecognizer) {
         
@@ -31,8 +49,17 @@ class TickerViewController: UIViewController {
         }
         else if (sender.state == UIGestureRecognizerState.Changed)
         {
-            tickerView.angle = twData.getAngle(touches)
+            tickerView.angle = twData.getAngle(touches, oldAngle: tickerView.angle)
+            if twData.completed && !twData.timing {
+                twData.startTimer(self)
+            }
         }
+    }
+    
+    
+    dynamic func updateTimer()  {
+        timeLabel.text = twData.getStringForTimer()
+        tickerView.angle = twData.angle
     }
     
     // MARK: View Controller Lifecycle

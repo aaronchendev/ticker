@@ -10,9 +10,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TickerViewController" customModule="ticker" customModuleProvider="target">
             <connections>
                 <outlet property="button" destination="cDl-35-kEy" id="QXf-jO-vh8"/>
-                <outlet property="nextButton" destination="eLF-O4-vUz" id="AVL-q3-DE6"/>
-                <outlet property="pauseButton" destination="ckX-ac-WtH" id="Nsf-U2-rPZ"/>
+                <outlet property="pauseFlashImageView" destination="dYA-hK-IB0" id="PjV-Dq-MPO"/>
+                <outlet property="pauseSymbolImageView" destination="CRe-r7-HIn" id="PJS-xc-HKO"/>
                 <outlet property="tickerView" destination="mwO-Ga-8zj" id="hLP-cm-xro"/>
+                <outlet property="timeLabel" destination="XRG-hx-q7L" id="GHx-2f-84O"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -76,8 +77,14 @@
                         </mask>
                     </variation>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XRG-hx-q7L">
-                    <rect key="frame" x="228" y="230" width="144" height="50"/>
+                <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emptyCircle" translatesAutoresizingMaskIntoConstraints="NO" id="dYA-hK-IB0" userLabel="emptycircle">
+                    <rect key="frame" x="158" y="113" width="284" height="284"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="dYA-hK-IB0" secondAttribute="height" multiplier="1:1" id="3uh-qk-nfa"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--:--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XRG-hx-q7L">
+                    <rect key="frame" x="258" y="230" width="84" height="50"/>
                     <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="50"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -89,11 +96,17 @@
                             <rect key="frame" x="0.0" y="0.0" width="120" height="90"/>
                             <state key="normal" image="pause"/>
                             <state key="highlighted" image="highlightedpause"/>
+                            <connections>
+                                <action selector="pauseButtonPressed:" destination="-1" eventType="touchUpInside" id="HAU-Mr-lhj"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eLF-O4-vUz" userLabel="Right Side Button (next task)">
                             <rect key="frame" x="120" y="0.0" width="120" height="90"/>
                             <state key="normal" image="nexttask"/>
                             <state key="highlighted" image="highlightednexttask"/>
+                            <connections>
+                                <action selector="nextTaskButonPressed:" destination="-1" eventType="touchUpInside" id="w3x-kU-Im7"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -114,13 +127,19 @@
                         </mask>
                     </variation>
                 </view>
+                <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pauseSymbol" translatesAutoresizingMaskIntoConstraints="NO" id="CRe-r7-HIn">
+                    <rect key="frame" x="165" y="120" width="270" height="270"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="0.56862745098039214" green="0.75686274509803919" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
+                <constraint firstItem="CRe-r7-HIn" firstAttribute="centerY" secondItem="bSK-8E-Gzl" secondAttribute="centerY" id="1vY-N2-iyq"/>
                 <constraint firstItem="KPt-2k-wMR" firstAttribute="width" secondItem="wlf-OG-5Wj" secondAttribute="height" multiplier="2:5" id="4GG-Nl-JrG"/>
                 <constraint firstItem="KPt-2k-wMR" firstAttribute="height" secondItem="wlf-OG-5Wj" secondAttribute="height" multiplier="0.15" id="7xz-2p-3St"/>
+                <constraint firstItem="CRe-r7-HIn" firstAttribute="height" secondItem="bSK-8E-Gzl" secondAttribute="height" id="8D7-PJ-8gC"/>
                 <constraint firstItem="XRG-hx-q7L" firstAttribute="centerY" secondItem="mwO-Ga-8zj" secondAttribute="centerY" id="8DY-Bb-suK"/>
                 <constraint firstItem="wlf-OG-5Wj" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="CO3-Ac-EvC"/>
+                <constraint firstItem="dYA-hK-IB0" firstAttribute="centerX" secondItem="bSK-8E-Gzl" secondAttribute="centerX" id="DRt-yS-x7m"/>
                 <constraint firstItem="KPt-2k-wMR" firstAttribute="centerX" secondItem="wlf-OG-5Wj" secondAttribute="centerX" id="EZz-wP-nac"/>
                 <constraint firstItem="bSK-8E-Gzl" firstAttribute="width" secondItem="mwO-Ga-8zj" secondAttribute="width" id="GU4-Z9-Ipb"/>
                 <constraint firstItem="KPt-2k-wMR" firstAttribute="centerX" secondItem="wlf-OG-5Wj" secondAttribute="centerX" id="JMN-vE-N6A"/>
@@ -130,7 +149,11 @@
                 <constraint firstItem="KPt-2k-wMR" firstAttribute="width" secondItem="wlf-OG-5Wj" secondAttribute="height" multiplier="5:2" id="Oc0-5c-wZu"/>
                 <constraint firstItem="KPt-2k-wMR" firstAttribute="height" secondItem="wlf-OG-5Wj" secondAttribute="height" multiplier="1.75" id="Qn2-gt-eZA"/>
                 <constraint firstItem="wlf-OG-5Wj" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="RjW-as-2sn"/>
+                <constraint firstItem="dYA-hK-IB0" firstAttribute="centerY" secondItem="bSK-8E-Gzl" secondAttribute="centerY" id="SdU-tj-KDc"/>
+                <constraint firstItem="dYA-hK-IB0" firstAttribute="width" secondItem="bSK-8E-Gzl" secondAttribute="width" multiplier="1.05" id="SwU-OO-Flw"/>
+                <constraint firstItem="CRe-r7-HIn" firstAttribute="centerX" secondItem="bSK-8E-Gzl" secondAttribute="centerX" id="UGF-dO-heF"/>
                 <constraint firstItem="bSK-8E-Gzl" firstAttribute="bottom" secondItem="mwO-Ga-8zj" secondAttribute="bottom" id="WMx-RO-3c5"/>
+                <constraint firstItem="dYA-hK-IB0" firstAttribute="height" secondItem="bSK-8E-Gzl" secondAttribute="height" id="YL9-AT-ijN"/>
                 <constraint firstItem="wlf-OG-5Wj" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" id="b7Y-Qg-HSS"/>
                 <constraint firstItem="bSK-8E-Gzl" firstAttribute="centerX" secondItem="mwO-Ga-8zj" secondAttribute="centerX" id="cGO-Gz-z2z"/>
                 <constraint firstItem="XRG-hx-q7L" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="eZ8-au-9dL"/>
@@ -138,12 +161,14 @@
                 <constraint firstItem="mwO-Ga-8zj" firstAttribute="width" secondItem="wlf-OG-5Wj" secondAttribute="width" multiplier="0.45" id="tTs-En-mqt"/>
                 <constraint firstItem="KPt-2k-wMR" firstAttribute="width" secondItem="wlf-OG-5Wj" secondAttribute="width" multiplier="0.7" id="xEO-f0-qi6"/>
                 <constraint firstItem="mwO-Ga-8zj" firstAttribute="centerX" secondItem="wlf-OG-5Wj" secondAttribute="centerX" id="xNX-E9-48s"/>
+                <constraint firstItem="CRe-r7-HIn" firstAttribute="width" secondItem="bSK-8E-Gzl" secondAttribute="width" id="xuJ-B1-HgA"/>
                 <constraint firstItem="wlf-OG-5Wj" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="zZP-1J-dLC"/>
                 <constraint firstItem="KPt-2k-wMR" firstAttribute="centerY" secondItem="wlf-OG-5Wj" secondAttribute="centerY" multiplier="1.6" id="zci-j5-k0f"/>
             </constraints>
             <variation key="default">
                 <mask key="constraints">
                     <exclude reference="WMx-RO-3c5"/>
+                    <exclude reference="YL9-AT-ijN"/>
                     <exclude reference="tTs-En-mqt"/>
                     <exclude reference="EZz-wP-nac"/>
                     <exclude reference="Oc0-5c-wZu"/>
@@ -160,10 +185,12 @@
     </objects>
     <resources>
         <image name="Ticker" width="1875" height="3335"/>
+        <image name="emptyCircle" width="2009" height="2001"/>
         <image name="highlightednexttask" width="1106" height="781"/>
         <image name="highlightedpause" width="1110" height="781"/>
         <image name="nexttask" width="1103" height="781"/>
         <image name="pause" width="1101" height="781"/>
+        <image name="pauseSymbol" width="2008" height="2000"/>
         <image name="ring" width="2521" height="2521"/>
     </resources>
 </document>
