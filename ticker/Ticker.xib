@@ -9,26 +9,22 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TickerViewController" customModule="ticker" customModuleProvider="target">
             <connections>
-                <outlet property="button" destination="cDl-35-kEy" id="QXf-jO-vh8"/>
-                <outlet property="pauseFlashImageView" destination="dYA-hK-IB0" id="PjV-Dq-MPO"/>
-                <outlet property="pauseSymbolImageView" destination="CRe-r7-HIn" id="PJS-xc-HKO"/>
-                <outlet property="tickerView" destination="mwO-Ga-8zj" id="hLP-cm-xro"/>
-                <outlet property="timeLabel" destination="XRG-hx-q7L" id="GHx-2f-84O"/>
+                <outlet property="tickerView" destination="i5M-Pr-FkT" id="BQ3-In-gop"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="TickerView" customModule="ticker" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ticker" translatesAutoresizingMaskIntoConstraints="NO" id="wlf-OG-5Wj">
+                <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ticker" translatesAutoresizingMaskIntoConstraints="NO" id="wlf-OG-5Wj">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ring" translatesAutoresizingMaskIntoConstraints="NO" id="bSK-8E-Gzl">
+                <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ring" translatesAutoresizingMaskIntoConstraints="NO" id="bSK-8E-Gzl">
                     <rect key="frame" x="165" y="120" width="270" height="270"/>
                 </imageView>
-                <view opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mwO-Ga-8zj" customClass="TickerView" customModule="ticker" customModuleProvider="target">
+                <view opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mwO-Ga-8zj" userLabel="Ticker Sub View" customClass="TickerSubView" customModule="ticker" customModuleProvider="target">
                     <rect key="frame" x="165" y="120" width="270" height="270"/>
                     <subviews>
                         <view autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cDl-35-kEy" userLabel="button">
@@ -77,7 +73,7 @@
                         </mask>
                     </variation>
                 </view>
-                <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emptyCircle" translatesAutoresizingMaskIntoConstraints="NO" id="dYA-hK-IB0" userLabel="emptycircle">
+                <imageView opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emptyCircle" translatesAutoresizingMaskIntoConstraints="NO" id="dYA-hK-IB0" userLabel="emptycircle">
                     <rect key="frame" x="158" y="113" width="284" height="284"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="dYA-hK-IB0" secondAttribute="height" multiplier="1:1" id="3uh-qk-nfa"/>
@@ -89,7 +85,7 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KPt-2k-wMR" userLabel="Bottom View">
+                <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KPt-2k-wMR" userLabel="Bottom View">
                     <rect key="frame" x="180" y="435" width="240" height="90"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ckX-ac-WtH" userLabel="Left Side Button (pause)">
@@ -127,7 +123,7 @@
                         </mask>
                     </variation>
                 </view>
-                <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pauseSymbol" translatesAutoresizingMaskIntoConstraints="NO" id="CRe-r7-HIn">
+                <imageView opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pauseSymbol" translatesAutoresizingMaskIntoConstraints="NO" id="CRe-r7-HIn">
                     <rect key="frame" x="165" y="120" width="270" height="270"/>
                 </imageView>
             </subviews>
@@ -167,8 +163,8 @@
             </constraints>
             <variation key="default">
                 <mask key="constraints">
-                    <exclude reference="WMx-RO-3c5"/>
                     <exclude reference="YL9-AT-ijN"/>
+                    <exclude reference="WMx-RO-3c5"/>
                     <exclude reference="tTs-En-mqt"/>
                     <exclude reference="EZz-wP-nac"/>
                     <exclude reference="Oc0-5c-wZu"/>
@@ -176,6 +172,13 @@
                     <exclude reference="xEO-f0-qi6"/>
                 </mask>
             </variation>
+            <connections>
+                <outlet property="pauseFlashImageView" destination="dYA-hK-IB0" id="ePc-nA-nB5"/>
+                <outlet property="pauseSymbolImageView" destination="CRe-r7-HIn" id="a8h-5o-Bmn"/>
+                <outlet property="ringImageView" destination="bSK-8E-Gzl" id="wbS-IO-goS"/>
+                <outlet property="tickerSubView" destination="mwO-Ga-8zj" id="gbD-HM-MgB"/>
+                <outlet property="timeLabel" destination="XRG-hx-q7L" id="iDZ-OB-eh3"/>
+            </connections>
         </view>
         <panGestureRecognizer minimumNumberOfTouches="1" id="W5M-F9-tft">
             <connections>

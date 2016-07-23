@@ -10,56 +10,44 @@ import UIKit
 
 class TickerViewController: UIViewController {
     
-    @IBOutlet weak var button: UIView!
     
-    @IBOutlet weak var tickerView: TickerView!
-    
-    @IBOutlet weak var pauseFlashImageView: UIImageView!
-    
-    @IBOutlet weak var pauseSymbolImageView: UIImageView!
+    @IBOutlet var tickerView: TickerView!
+ 
     @IBAction func pauseButtonPressed(sender: UIButton) {
         if twData.timing {
-            if twData.pauseTimer() {
-                UIView.animateWithDuration(0.5, animations: {
-                    self.pauseFlashImageView.alpha = 0.5
-                    self.pauseSymbolImageView.alpha = 0.7
-                })
-            } else {
-                UIView.animateWithDuration(0.5, animations: {
-                    self.pauseFlashImageView.alpha = 0
-                    self.pauseSymbolImageView.alpha = 0
-                })
-            }
+            twData.pauseTimer() ? tickerView.animatePause() : tickerView.animatePlay()
         }
     }
     @IBAction func nextTaskButonPressed(sender: UIButton) {
+        
     }
     
     var twData = ContainerViewController.twData
 
-    @IBOutlet weak var timeLabel: UILabel!
     
     @IBAction func didReceivePanGesture(sender: UIPanGestureRecognizer) {
         
         let touches = sender.locationInView(nil);
+        let tickerSubView = tickerView.tickerSubView
         
         if sender.state == UIGestureRecognizerState.Began
         {
-            twData.updateState(touches, angle: tickerView.angle, center: tickerView.center)
+            twData.updateState(touches, angle: tickerSubView.angle, center: tickerSubView.center)
         }
         else if (sender.state == UIGestureRecognizerState.Changed)
         {
-            tickerView.angle = twData.getAngle(touches, oldAngle: tickerView.angle)
+            tickerSubView.angle = twData.getAngle(touches, oldAngle: tickerSubView.angle)
             if twData.completed && !twData.timing {
                 twData.startTimer(self)
+                tickerView.animateCircle(twData.totalTime)
             }
         }
     }
     
     
     dynamic func updateTimer()  {
-        timeLabel.text = twData.getStringForTimer()
-        tickerView.angle = twData.angle
+        tickerView.timeLabel.text = twData.getStringForTimer()
+        tickerView.tickerSubView.angle = twData.angle
     }
     
     // MARK: View Controller Lifecycle

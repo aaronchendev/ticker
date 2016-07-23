@@ -21,7 +21,8 @@
 		A773B7E41D3AF7790080B5A0 /* Setting.xib in Resources */ = {isa = PBXBuildFile; fileRef = A773B7DC1D3AF7790080B5A0 /* Setting.xib */; };
 		A773B7E81D3AF7A40080B5A0 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A773B7E71D3AF7A40080B5A0 /* ContainerViewController.swift */; };
 		A773B7EA1D3AF7F30080B5A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A773B7E91D3AF7F30080B5A0 /* Main.storyboard */; };
-		A7A1FF661D3EE754003F3B5B /* TickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A1FF651D3EE754003F3B5B /* TickerView.swift */; };
+		A7A1FF661D3EE754003F3B5B /* TickerSubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A1FF651D3EE754003F3B5B /* TickerSubView.swift */; };
+		A7E071CA1D42F42F006A71E9 /* TickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E071C91D42F42F006A71E9 /* TickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,7 +63,8 @@
 		A773B7DC1D3AF7790080B5A0 /* Setting.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Setting.xib; sourceTree = "<group>"; };
 		A773B7E71D3AF7A40080B5A0 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		A773B7E91D3AF7F30080B5A0 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		A7A1FF651D3EE754003F3B5B /* TickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickerView.swift; sourceTree = "<group>"; };
+		A7A1FF651D3EE754003F3B5B /* TickerSubView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickerSubView.swift; sourceTree = "<group>"; };
+		A7E071C91D42F42F006A71E9 /* TickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,7 +116,8 @@
 			isa = PBXGroup;
 			children = (
 				A76C61A31D3F3A9E00DE7AB8 /* TickerWheelData.swift */,
-				A7A1FF651D3EE754003F3B5B /* TickerView.swift */,
+				A7A1FF651D3EE754003F3B5B /* TickerSubView.swift */,
+				A7E071C91D42F42F006A71E9 /* TickerView.swift */,
 				A7A1FF641D3EDEA9003F3B5B /* View Controllers */,
 				A773B7EB1D3AFA3F0080B5A0 /* UI files */,
 				A773B7EC1D3AFA630080B5A0 /* extras */,
@@ -308,10 +311,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7E071CA1D42F42F006A71E9 /* TickerView.swift in Sources */,
 				A773B7E81D3AF7A40080B5A0 /* ContainerViewController.swift in Sources */,
 				A76C61A41D3F3A9E00DE7AB8 /* TickerWheelData.swift in Sources */,
 				A773B7E11D3AF7790080B5A0 /* TickerViewController.swift in Sources */,
-				A7A1FF661D3EE754003F3B5B /* TickerView.swift in Sources */,
+				A7A1FF661D3EE754003F3B5B /* TickerSubView.swift in Sources */,
 				A773B7E31D3AF7790080B5A0 /* SettingViewController.swift in Sources */,
 				A71F04371D3A0292007C5627 /* AppDelegate.swift in Sources */,
 				A773B7DF1D3AF7790080B5A0 /* TaskViewController.swift in Sources */,
